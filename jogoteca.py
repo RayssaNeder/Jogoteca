@@ -17,8 +17,8 @@ jogo4 = Jogo('Mortal Komat', 'Luta', 'SNES')
 
 lista = [jogo1, jogo2, jogo3, jogo4 ]
 
-@app.route('/inicio')
-def listar():
+@app.route('/')
+def index():
     return render_template('lista.html', titulo='Games', jogos=lista )
 
 @app.route('/novo')
@@ -37,4 +37,4 @@ def criar():
 
     return render_template('lista.html', titulo='Games', jogos=lista)
 
-app.run()
+app.run(debug=True)
