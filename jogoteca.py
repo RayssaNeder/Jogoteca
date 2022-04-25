@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 
 
 app = Flask(__name__)
@@ -35,6 +35,6 @@ def criar():
     jogo = Jogo(nome, categoria, console)
     lista.append(jogo)
 
-    return render_template('lista.html', titulo='Games', jogos=lista)
+    return redirect('/')
 
 app.run(debug=True)
